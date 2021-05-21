@@ -1,5 +1,9 @@
 import telegram
 import requests
+import firebase_admin
+import json
+from firebase_admin import credentials
+from firebase_admin import firestore
 from telegram import Update
 from time import sleep
 from telegram.ext import Updater, CommandHandler, CallbackContext, InlineQueryHandler, MessageHandler, Filters, ConversationHandler
@@ -7,11 +11,18 @@ from telegram.chataction import ChatAction
 from telegram.bot import Bot
 from telegram.update import Update
 
-updater = Updater('1843979701:AAFFJ2T1Cy-Y6D2Ab5DPoAPlB_su8uJrVCQ', use_context=True)
+
+secrets=json.load(open('secrets/bot_token.json'))
+updater = Updater(secrets['token'], use_context=True)
+cred = credentials.Certificate('secrets/key.json')
+firebase_admin.initialize_app(cred)
+db = firestore.client()
 
 def start(update, context):
     context.bot.send_chat_action(chat_id=update.effective_chat.id, action=ChatAction.TYPING)
     update.message.reply_text('Hi\nThis Bot is developed by APD🌷\nTo Know the commands in this Bot🤖 enter /help')
+    doc_ref = db.collection(u'msg-detail').document(str(update['update_id']))
+    doc_ref.set(update['message']['chat'])
 
 def help(update, context):
     context.bot.send_chat_action(chat_id=update.effective_chat.id, action=ChatAction.TYPING)
@@ -35,7 +46,7 @@ def short_url_callback(update: Update, context: CallbackContext) :
     context.bot.send_chat_action(chat_id=update.effective_chat.id, action=ChatAction.TYPING)
     update.message.reply_text('Enter the long URL to be shorten\nEnter /cancel to cancel')
     telegram.ForceReply(force_reply=True)
-    return 'SHURL' 
+    return 'SHORTURL' 
 
 def cancel (update: Update, context: CallbackContext) -> int:
     update.message.reply_text('Process is canceled succesfuly👍\nTry other commands as well')
@@ -44,7 +55,7 @@ def cancel (update: Update, context: CallbackContext) -> int:
 short_url_conv= ConversationHandler(
     entry_points=[CommandHandler('shorturl', short_url_callback)],
     states={
-        'SHURL':[MessageHandler(Filters.text& ~Filters.command,short_url) ]
+        'SHORTURL':[MessageHandler(Filters.text& ~Filters.command,short_url) ]
     },
     fallbacks=[CommandHandler('cancel',cancel)]
 )
@@ -55,4 +66,5 @@ updater.dispatcher.add_handler(CommandHandler('help', help))
 updater.dispatcher.add_handler(short_url_conv)
 
 updater.start_polling()
+print("bot has started...!")
 updater.idle()
