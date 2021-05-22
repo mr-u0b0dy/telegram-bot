@@ -1,5 +1,6 @@
 import telegram
 import requests
+import json
 from telegram import Update
 from time import sleep
 from telegram.ext import Updater, CommandHandler, CallbackContext, InlineQueryHandler, MessageHandler, Filters, ConversationHandler
@@ -7,7 +8,8 @@ from telegram.chataction import ChatAction
 from telegram.bot import Bot
 from telegram.update import Update
 
-updater = Updater('1843979701:AAFFJ2T1Cy-Y6D2Ab5DPoAPlB_su8uJrVCQ', use_context=True)
+secrets=json.load(open('secrets/bot_token.json'))
+updater = Updater(secrets['token'], use_context=True)
 
 def start(update, context):
     context.bot.send_chat_action(chat_id=update.effective_chat.id, action=ChatAction.TYPING)

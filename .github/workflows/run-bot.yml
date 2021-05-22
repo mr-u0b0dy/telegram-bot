@@ -32,14 +32,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: run script 1st time
-        run: python -u telegram-bot.py
-
-      - name: run script 2nd time
-        run: python -u telegram-bot.py
-
-      - name: run script 3rd time
-        run: python -u telegram-bot.py
-
-      - name: run script 4th time
-        run: python -u telegram-bot.py
+      # - name: run script 
+        # run: python -u telegram-bot.py
