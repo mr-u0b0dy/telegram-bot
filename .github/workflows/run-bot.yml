@@ -30,7 +30,7 @@ jobs:
         env:
           SECRET_PASSPHRASE: ${{secrets.SECRET_PASSPHRASE}}
         run: |
-          mkdir secrets
+          mkdir $HOME/secrets
           gpg --decrypt --quiet --batch --yes --passphrase="$SECRET_PASSPHRASE" --output ~/secrets/bot_token.json secrets_encrypted/bot_token.json.gpg
           echo $HOME/secrets/bot_token.json
       
