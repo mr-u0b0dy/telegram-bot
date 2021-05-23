@@ -11,7 +11,7 @@ from telegram.update import Update
 
 # secrets=json.load(open('bot_token.json'))
 # updater = Updater(secrets['token'], use_context=True)
-print(os.getenv('token')
+print(os.getenv('token'))
 Updater = Updater(os.getenv('token'), use_context=True)
 def start(update, context):
     context.bot.send_chat_action(chat_id=update.effective_chat.id, action=ChatAction.TYPING)
