@@ -40,7 +40,7 @@ I wrote this script to be executed by GitHub Action. If you tend run script in y
 
 ### <p align="center">or
 If you wish to run on GitHub, Fork this repository and then just add a [Repository Secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository). 
-Your secrets name must be `BOT_TOKEN` and value be of your bot `Token`. Make sure you use your time wisely.
+Your secrets name must be `BOT_TOKEN` and value to be of your bot `Token`. Make sure you use your time wisely.
 
 #### Note:
 There is a limitation for everything. GitHub Action cancels a run after 6 hrs. However you can increase the run time by having multiple run in a workflow.
