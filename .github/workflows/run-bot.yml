@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir secrets
           echo $SECRET_PASSPHRASE
-          gpg --decrypt --quiet --batch --yes --passphrase="$SECRET_PASSPHRASE" --output $HOME/secrets/bot_token.json secrets_encrypted/bot_token.json.asc
+          gpg --decrypt --quiet --batch --yes --passphrase="$SECRET_PASSPHRASE" --output $HOME/secrets/bot_token.json secrets_encrypted/bot_token.json.gpg
           echo $HOME/secrets/bot_token.json
       
       - name: Install dependencies
@@ -42,4 +42,3 @@ jobs:
 
       # - name: run script 
         # run: python -u telegram-bot.py
-        
