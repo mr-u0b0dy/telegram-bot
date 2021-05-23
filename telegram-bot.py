@@ -8,7 +8,7 @@ from telegram.chataction import ChatAction
 from telegram.bot import Bot
 from telegram.update import Update
 
-secrets=json.load(open('$HOME/secrets/bot_token.json'))
+secrets=json.load(open('~/secrets/bot_token.json'))
 updater = Updater(secrets['token'], use_context=True)
 
 def start(update, context):
