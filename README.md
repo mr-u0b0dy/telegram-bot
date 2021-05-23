@@ -45,7 +45,7 @@ Your secrets name must be `BOT_TOKEN` and value be of your bot `Token`. Make sur
 #### Note:
 There is a limitation for everything. GitHub Action cancels a run after 6 hrs. However you can increase the run time by having multiple run in a workflow.
 Your also limited by GitHub Actions run time which differ for each [product](https://docs.github.com/en/github/getting-started-with-github/learning-about-github/githubs-products)
-(for `Pro` it is 3000 mins).
+(for `Pro` it is 3000 mins/month).
 
 ## 📝 License
 
