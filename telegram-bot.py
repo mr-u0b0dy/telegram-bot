@@ -8,9 +8,9 @@ from telegram.chataction import ChatAction
 from telegram.bot import Bot
 from telegram.update import Update
 
-secrets=json.load(open('bot_token.json'))
-updater = Updater(secrets['token'], use_context=True)
-
+# secrets=json.load(open('bot_token.json'))
+# updater = Updater(secrets['token'], use_context=True)
+Updater =Updater(token, use_context=True)
 def start(update, context):
     context.bot.send_chat_action(chat_id=update.effective_chat.id, action=ChatAction.TYPING)
     update.message.reply_text('Hi\nThis Bot is developed by APD🌷\nTo Know the commands in this Bot🤖 enter /help')

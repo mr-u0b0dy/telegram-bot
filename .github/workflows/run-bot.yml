@@ -39,4 +39,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: run script 
+        env :
+          token: ${{bot_token}}
         run: python -u telegram-bot.py
