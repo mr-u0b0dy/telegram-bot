@@ -31,8 +31,7 @@ jobs:
           SECRET_PASSPHRASE: ${{secrets.SECRET_PASSPHRASE}}
         run: |
           mkdir secrets
-          echo $SECRET_PASSPHRASE
-          gpg --decrypt --quiet --batch --yes --passphrase="$SECRET_PASSPHRASE" --output $HOME/secrets/bot_token.json secrets_encrypted/bot_token.json.gpg
+          gpg --decrypt --quiet --batch --yes --passphrase="$SECRET_PASSPHRASE" --output $HOME/runner/secrets/bot_token.json secrets_encrypted/bot_token.json.gpg
           echo $HOME/secrets/bot_token.json
       
       - name: Install dependencies
