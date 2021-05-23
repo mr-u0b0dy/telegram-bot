@@ -26,6 +26,11 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9.5
+      - name: decrypt
+        run: |
+          mkdir secrets
+          gpg --decrypt --passphrase="$SECRET_PASSPHRASE" --output $HOME/secrets/bot_token.json secrets_encrypted/bot_token.json.asc
+          echo $HOME/secrets/bot_token.json
       
       - name: Install dependencies
         run: |
@@ -35,4 +40,3 @@ jobs:
       # - name: run script 
         # run: python -u telegram-bot.py
 
-        
