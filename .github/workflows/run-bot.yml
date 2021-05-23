@@ -40,5 +40,5 @@ jobs:
 
       - name: run script 
         env :
-          token: ${{bot_token}}
+          token: ${{secrets.BOT_TOKEN}}
         run: python -u telegram-bot.py
