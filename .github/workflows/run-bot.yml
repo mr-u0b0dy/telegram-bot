@@ -28,7 +28,7 @@ jobs:
           python-version: 3.9.5
       - name: decrypt
         env:
-          SECRET_PASSPHRASE: ${{SECRET_PASSPHRASE}}
+          SECRET_PASSPHRASE: ${{secrets.SECRET_PASSPHRASE}}
         run: |
           mkdir secrets
           echo $SECRET_PASSPHRASE
