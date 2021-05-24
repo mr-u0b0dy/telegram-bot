@@ -50,4 +50,4 @@ Your also limited by GitHub Actions run time which differ for each [product](htt
 ## 📝 License
 
 Copyright © 2021 [Dharun A P](https://github.com/Dharun-palanisamy).<br />
-This project is [MIT](https://github.com/Dharun-palanisamy/telegram-bot/LICENSE) licensed.
+This project is [MIT](LICENSE) licensed.
