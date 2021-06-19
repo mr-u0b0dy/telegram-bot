@@ -22,9 +22,9 @@ Furthermore, you have basic knowledge of the Python programming language and mor
 
 ### Installation
 
-You need to install two python package : `python-telegram-bot`, `request`.
+You need to install two python package : `python-telegram-bot`, `requests`.
 ```bash
-pip install python-telegram-bot request
+pip install python-telegram-bot requests
 ```
 ### Things to Change
 You should modifiy this line with respect to your bot `TOKEN`
