@@ -6,6 +6,7 @@
 </p>
 
 This Telegram Bot receives a url from the user and shorten it using [cleanuri.com](https://cleanuri.com/)'s API.
+This Bot works under the name [@url_shortener_apdbot](https://t.me/Url_shortener_apdbot).
 
 ## ✨ How it Works
 You have to initialize by `/start` command. Enter `/help` for list all command. To shorten the URL enter the command `/shorturl`.
