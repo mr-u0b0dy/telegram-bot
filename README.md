@@ -50,5 +50,5 @@ Your also limited by GitHub Actions run time which differ for each [product](htt
 
 ## 📝 License
 
-Copyright © 2021 [Dharun A P](https://github.com/Dharun-palanisamy).<br />
+Copyright © 2021 [Dharun A P](https://github.com/mr-u0b0dy).<br />
 This project is [MIT](LICENSE) licensed.
